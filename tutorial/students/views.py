@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView, ListView, DetailView
 
 # import department model
-from students.models import Department
+from students.models import Department, Student
 
 
 class WelcomeView(TemplateView):
@@ -35,3 +35,23 @@ class DeptDetailView(DetailView):
     model = Department
     context_object_name = 'dept'
 
+
+class StudentListView(ListView):
+    """
+    Return list of students in the system.
+    """
+    template_name = 'stud-list.html'
+    model = Student
+    context_object_name = 'students'
+
+
+class StudentDetailView(DetailView):
+    """
+    This class utilizes the default class
+    based view provided by Django framework to
+    display the details of a student in the system
+    """
+    template_name = 'stud-details.html'
+    model = Student
+    context_object_name = 'student'
+    
