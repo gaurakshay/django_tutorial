@@ -33,5 +33,5 @@ class DeptDetailView(DetailView):
     """
     template_name = 'dept-details.html'
     model = Department
-    context_object_name = "dept"
+    context_object_name = 'dept'
 
