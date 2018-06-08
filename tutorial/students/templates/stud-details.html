@@ -9,6 +9,12 @@
     <br><br><br>
     Student Name: <h3>{{ student }}</h3>
     Student ID: <h3>{{ student.s_id }}</h3>
-    Student Pic: <img src="{{ student.s_pic.url }}">
+    Student Pic: 
+	<!-- Basic validation in templates -->
+	{% if student.s_pic %}
+	<img src="{{ student.s_pic.url }}">
+	{% else %}
+	<i> No picture uploaded. </i>
+	{% endif %}
 </body>
 </html>

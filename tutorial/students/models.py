@@ -1,6 +1,7 @@
 from django.db import models
 
-# Create your models here.
+# Import reverse_lazy for get_absolute_url
+from django.urls import reverse_lazy
 
 
 class Department(models.Model):
@@ -74,4 +75,10 @@ class Student(models.Model):
         """
         return "{0} {1}".format(self.s_first_name, self.s_last_name)
 
+    def get_absolute_url(self):
+        """
+        Returns the url to details for this object.
+        :return: URL to display object details.
+        """
+        return reverse_lazy('stud_details', kwargs={'pk': self.pk})
 

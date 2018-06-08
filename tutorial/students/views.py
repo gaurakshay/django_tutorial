@@ -1,11 +1,16 @@
 from django.shortcuts import render
 
-# import the template view.
-from django.views.generic import TemplateView, ListView, DetailView
+# import the generic views.
+from django.views.generic import TemplateView, ListView, DetailView, CreateView
 
-# import department model
+# import models
 from students.models import Department, Student
 
+# import forms
+from students.forms import StudentForm
+
+#import reverse lazy
+from django.urls import reverse_lazy
 
 class WelcomeView(TemplateView):
     """
@@ -54,4 +59,18 @@ class StudentDetailView(DetailView):
     template_name = 'stud-details.html'
     model = Student
     context_object_name = 'student'
-    
+
+
+class StudentAddView(CreateView):
+    """
+    This class utilizes the default class based
+    view provided by Django framework to add submitted
+    data to backend database.
+    """
+    template_name = 'stud-edit.html'
+    model = Student
+    form_class = StudentForm
+    # Use reverse lazy to create the url for our list view
+    # the parameter is the named url in our urls.py file.
+    # success_url = reverse_lazy('stud_list')
+
