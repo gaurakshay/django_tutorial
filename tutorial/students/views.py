@@ -1,5 +1,3 @@
-from django.shortcuts import render
-
 # import the generic views.
 from django.views.generic import TemplateView, ListView, DetailView, CreateView
 
