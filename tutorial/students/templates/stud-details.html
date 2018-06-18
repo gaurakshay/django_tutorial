@@ -10,7 +10,7 @@
     Student Name: <h3>{{ student }}</h3>
     Student ID: <h3>{{ student.s_id }}</h3>
     Student Pic: 
-	<!-- Basic validation in templates -->
+{#	Basic validation in templates #}
 	{% if student.s_pic %}
 	<img src="{{ student.s_pic.url }}">
 	{% else %}
