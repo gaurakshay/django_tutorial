@@ -11,6 +11,7 @@ media
 
 # VirtualEnv
 venv/
+env/
 
 # Pycharm files.
 .idea/
