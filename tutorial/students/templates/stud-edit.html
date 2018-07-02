@@ -1,10 +1,14 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Student details</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %} Add Student {% endblock title %}
+{#<!doctype html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Student details</title>#}
+{#</head>#}
+{#<body>#}
+{% block content %}
     <h2>Student Add Screen</h2>
     <br><br><br>
 	<form method="POST" enctype="multipart/form-data">
@@ -13,5 +17,6 @@
 		{{ form.as_p }}
 		<button type="submit"> Save </button>
 	</form>
-</body>
-</html>
+{% endblock content %}
+{#</body>#}
+{#</html>#}

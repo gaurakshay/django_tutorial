@@ -1,5 +1,5 @@
 # import the generic views.
-from django.views.generic import TemplateView, ListView, DetailView, CreateView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView
 
 # import models
 from students.models import Department, Student
@@ -72,3 +72,14 @@ class StudentAddView(CreateView):
     # the parameter is the named url in our urls.py file.
     # success_url = reverse_lazy('stud_list')
 
+
+class StudentUpdateView(UpdateView):
+    """
+    This class will pre-populate the student's details
+    in a form which can then be modified to change
+    the student's details.
+    Utilizes Django's inbuilt UpdateView Class.
+    """
+    template_name = 'stud-edit.html'
+    model = Student
+    form_class = StudentForm
