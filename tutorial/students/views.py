@@ -1,5 +1,5 @@
 # import the generic views.
-from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 
 # import models
 from students.models import Department, Student
@@ -83,3 +83,13 @@ class StudentUpdateView(UpdateView):
     template_name = 'stud-edit.html'
     model = Student
     form_class = StudentForm
+
+
+class StudentDeleteView(DeleteView):
+    """
+    This will delete the student model instance from the
+    database. Utilizes Django's inbuilt DeleteView class.
+    """
+    template_name = 'stud-delete.html'
+    model = Student
+    success_url = reverse_lazy('stud_list')

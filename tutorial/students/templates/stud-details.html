@@ -15,4 +15,7 @@
 	{% else %}
 	<i> No picture uploaded. </i>
 	{% endif %}
+
+
+    <a href="{% url 'stud_delete' pk=student.pk %}"> Delete </a>
 {% endblock content %}
