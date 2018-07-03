@@ -1,15 +1,13 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Student List</title>
-</head>
-<body>
-<h2>List of students</h2>
-<br><br><br>
-{% for student in students %}
-Student ID: <b>{{ student.s_id }}</b><br>
-<a href="{% url 'stud_details' pk=student.pk %}"> Details </a><br>
-{% endfor %}
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+    Student List
+{% endblock title %}
+{% block content %}
+    <h2>List of students</h2>
+    <br><br><br>
+    {% for student in students %}
+        <p>Student ID: <b style="font-size: x-large">{{ student.s_id }}</b><br>
+    <a href="{% url 'stud_details' pk=student.pk %}"> Details </a></p>
+    {% endfor %}
+{% endblock content %}

@@ -1,14 +1,12 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Department details</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}
+    Department details
+{% endblock title %}
+{% block content %}
     <h2>Department Detail Screen</h2>
     <br><br><br>
-    Department Name: <h3>{{ dept }}</h3>
-    Department Code: <h3>{{ dept.d_code }}</h3>
-    Department Chair: <h3>{{ dept.d_chair }}</h3>
-</body>
-</html>
+    <p>Department Name: <b style="font-size: x-large">{{ dept }}</b></p>
+    <p>Department Code: <b style="font-size: x-large">{{ dept.d_code }}</b></p>
+    <p>Department Chair: <b style="font-size: x-large">{{ dept.d_chair }}</b></p>
+{% endblock content %}

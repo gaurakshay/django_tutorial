@@ -1,20 +1,18 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Student details</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}
+    Student Details
+{% endblock title %}
+{% block content %}
     <h2>Student Detail Screen</h2>
-    <br><br><br>
-    Student Name: <h3>{{ student }}</h3>
-    Student ID: <h3>{{ student.s_id }}</h3>
-    Student Pic: 
+    <p></p>
+    <p>Student Name: <b style="font-size: x-large">{{ student }}</b></p>
+    <p>Student ID: <b style="font-size: x-large">{{ student.s_id }}</b></p>
+    <p> Student Pic: </p>
 {#	Basic validation in templates #}
 	{% if student.s_pic %}
 	<img src="{{ student.s_pic.url }}">
 	{% else %}
 	<i> No picture uploaded. </i>
 	{% endif %}
-</body>
-</html>
+{% endblock content %}

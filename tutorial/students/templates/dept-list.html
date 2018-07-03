@@ -1,15 +1,13 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Department List</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}
+    Department List
+{% endblock title %}
+{% block content %}
     <h2>List of departments</h2>
     <br><br><br>
     {% for dept in depts %}
-    Department Code: <b>{{ dept.d_code }}</b><br>
+    Department Code: <b style="font-size: x-large">{{ dept.d_code }}</b><br>
     <a href="{% url 'dept_details' pk=dept.pk %}"> Details </a><br>
-    {% endfor %} 
-</body>
-</html>
+    {% endfor %}
+{% endblock content %}
