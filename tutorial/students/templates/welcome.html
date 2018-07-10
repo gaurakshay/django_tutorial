@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
 
 {% block title %} Welcome! {% endblock title %}
-{#<!doctype html>#}
-{#<html lang="en">#}
-{#<head>#}
-{#    <meta charset="UTF-8">#}
-{#    <title>Hi</title>#}
-{#</head>#}
-{#<body>#}
 {% block content %}
-    <h1>Welcome!!!</h1>
+    <div class="jumbotron mt-4">
+        <h1 class="display-4">Welcome!!!</h1>
+        <p>
+            Put your content between the header and the footer and you will be alright my friend! <br>
+            Jumbotron is a cool way to bring attention to the content that you want. And bootstrap just makes it so
+            easy!
+        </p>
+        <p class="mt-5">
+            <a class="btn btn-primary" href="#" role="button">Check it out</a>
+        </p>
+    </div>
+
 {% endblock content %}
-{#</body>#}
-{#</html>#}

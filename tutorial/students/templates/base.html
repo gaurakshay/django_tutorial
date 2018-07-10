@@ -2,40 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Base HTML {% endblock title %}</title>
-    <style>
-        body {
-            font-family: Arial;
-            margin: 0 0 60px;
-        }
-
-        .header{
-            padding: 10px 16px;
-            background: #555;
-            color: #f1f1f1;
-        }
-
-        {#.footer {#}
-        {#    position: absolute;#}
-        {#    bottom: 0;#}
-        {#    width: 100%;#}
-        {#    height: 60px;#}
-        {#    background: #555;#}
-        {#    color: #f1f1f1;#}
-        {#}#}
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}Base HTML{% endblock title %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+{#    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/materia/bootstrap.min.css">#}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<header class="header" id="myHeader">
-    <h1>Django Tutorial</h1>
-</header>
-<div style="margin-left: 10%;">
-{% block content %}
-    {# Your content goes here #}
-{% endblock content %}
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Django Tutorial</a>
+    </div>
+</nav>
+<div class="container">
+    {% block content %}
+        {# Your content goes here #}
+    {% endblock content %}
+    <hr>
 </div>
-{#<footer class="footer" id="myFooter">#}
-{#    <h3>My Footer</h3>#}
-{#</footer>#}
+<footer class="py-2 bg-dark">
+    <div class="container">
+        <div class="row text-white-50">
+            <div class="col-md px-5">
+                <h5>About</h5>
+                <ul class="list-unstyled">
+                    <li>Team</li>
+                    <li>Locations</li>
+                    <li>Privacy</li>
+                </ul>
+            </div>
+            <div class="col-md px-5">
+                <h5>Features</h5>
+                <ul class="list-unstyled">
+                    <li>Monitoring</li>
+                    <li>Platform Agnostic</li>
+                    <li>Performance</li>
+                </ul>
+            </div>
+            <div class="col-md px-5">
+                <h5>Resources</h5>
+                <ul class="list-unstyled">
+                    <li>Documentation</li>
+                    <li>Forums</li>
+                    <li>Tutorials</li>
+                    <li>Videos</li>
+                </ul>
+            </div>
+            <div class="w-100"></div>
+            <div class="col-md text-muted text-center">
+                &copy; Akshay Gaur
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 </body>
 </html>
